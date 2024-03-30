@@ -5,7 +5,7 @@ on:
       - main  # replace with your default branch if not 'main'
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -33,8 +33,20 @@ jobs:
       - name: Build 🏗️
         run: pnpm run build
 
-      - name: Deploy 🚀
-        uses: peaceiris/actions-gh-pages@v3.8.0
+      - name: Upload artifact 📡
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out  # replace with your build output directory
+          path: ./out
+  
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Publish to GitHub Pages 🚀
+        id: deployment
+        uses: actions/deploy-pages@v4
