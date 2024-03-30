@@ -1,63 +1,34 @@
-# A statically generated blog example using Next.js, Markdown, and TypeScript
+## How to Add a New Post
 
-This is the existing [blog-starter](https://github.com/vercel/next.js/tree/canary/examples/blog-starter) plus TypeScript.
+1. **Create a new file in the posts directory:** Navigate to the `_posts` directory in your project. This directory contains all the posts for your blog. Create a new file in this directory. The filename should be the slug of your post (the part that appears in the URL) and should end with `.md` or `.mdx` (for example, `my-first-post.md`).
 
-This example showcases Next.js's [Static Generation](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts) feature using Markdown files as the data source.
+2. **Add frontmatter to your post:** At the top of your new file, add a block of YAML between two lines of three dashes. This is called the frontmatter and it's where you define metadata about your post. Here's an example:
 
-The blog posts are stored in `/_posts` as Markdown files with front matter support. Adding a new Markdown file in there will create a new blog post.
+    ```markdown
+    ---
+    title: 'My First Post'
+    date: '2022-01-01'
+    ---
+    ```
 
-To create the blog posts we use [`remark`](https://github.com/remarkjs/remark) and [`remark-html`](https://github.com/remarkjs/remark-html) to convert the Markdown files into an HTML string, and then send it down as a prop to the page. The metadata of every post is handled by [`gray-matter`](https://github.com/jonschlinkert/gray-matter) and also sent in props to the page.
+    Replace `'My First Post'` with the title of your post and `'2022-01-01'` with the date of your post.
 
-## Demo
+3. **Write your post:** Below the frontmatter, you can start writing your post. You can use Markdown to format your text. Here's an example:
 
-[https://next-blog-starter.vercel.app/](https://next-blog-starter.vercel.app/)
+    ```markdown
+    This is my first post!
 
-## Deploy your own
+    I'm very excited to start blogging.
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/blog-starter)
+    Here's a list of things I want to write about:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/blog-starter&project-name=blog-starter&repository-name=blog-starter)
+    - My projects
+    - My learnings
+    - My interests
+    ```
 
-### Related examples
+4. **Save your post:** Once you're done writing, save your file. Your new post should now appear on your blog.
 
-- [WordPress](/examples/cms-wordpress)
-- [DatoCMS](/examples/cms-datocms)
-- [Sanity](/examples/cms-sanity)
-- [TakeShape](/examples/cms-takeshape)
-- [Prismic](/examples/cms-prismic)
-- [Contentful](/examples/cms-contentful)
-- [Strapi](/examples/cms-strapi)
-- [Agility CMS](/examples/cms-agilitycms)
-- [Cosmic](/examples/cms-cosmic)
-- [ButterCMS](/examples/cms-buttercms)
-- [Storyblok](/examples/cms-storyblok)
-- [GraphCMS](/examples/cms-graphcms)
-- [Kontent](/examples/cms-kontent)
-- [Umbraco Heartcore](/examples/cms-umbraco-heartcore)
-- [Builder.io](/examples/cms-builder-io)
-- [TinaCMS](/examples/cms-tina/)
-- [Enterspeed](/examples/cms-enterspeed)
+5. **Preview your post:** To preview your post, you can start your development server by running `npm run dev` (or `yarn dev` if you're using Yarn) in your terminal. Then, open your browser and navigate to `http://localhost:3000`. You should see your new post in the list of posts.
 
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
-```bash
-npx create-next-app --example blog-starter blog-starter-app
-```
-
-```bash
-yarn create next-app --example blog-starter blog-starter-app
-```
-
-```bash
-pnpm create next-app --example blog-starter blog-starter-app
-```
-
-Your blog should be up and running on [http://localhost:3000](http://localhost:3000)! If it doesn't work, post on [GitHub discussions](https://github.com/vercel/next.js/discussions).
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
-
-# Notes
-
-`blog-starter` uses [Tailwind CSS](https://tailwindcss.com) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3).
+6. **Publish your post:** To publish your post, commit your changes and push them to your repository.
